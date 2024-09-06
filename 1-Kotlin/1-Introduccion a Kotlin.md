@@ -26,6 +26,49 @@ val apellido = "Rodríguez" // Kotlin infiere que es un String
 var altura = 1.75      // Kotlin infiere que es un Double
 ```
 
+- No siempre kotlin infiere el tipo de variable, para declarar el tipo de variable que es:
+
+```kotlin
+val edad:Int = 40
+```
+
+- Las variables numéricas pueden ser de diferentes tipos:
+
+```kotlin
+//Int -2,147,483,647 a 2,147,483,647
+
+//Long
+
+//Float - Terminan con f
+
+//Double - Admite mas decimales que float. Solo en caso de necesitar algo super potente como decimales.
+```
+- Las variables alfanuméricas son variables que contienen valoras alfanuméricos además de números
+
+```kotlin
+//Variables alfanuméricas
+
+//Char: Solo soporta un caracter
+val charEjemplo1:Char = 'e'
+val charEjemplo1:Char = '2'
+val charEjemplo1:Char = '@'
+
+//String: Soporta lo que sea y de tamaño que queramos. Va con comillas dobles
+val stringEjemplo:String = "Bienvenidos a DAM 2"
+```
+
+- Variables Booleanas
+
+```kotlin
+//Variables booleanas
+val boolEjemplo1:Bool = true
+val boolEjemplo2:Bool = false
+```
+
+- Los val no pueden ser reasignados, no se les puede cambiar el valor.  `val` es una constante. Si queremos cambiar el valor de las variables hemos de usar `var`
+  
+- La diferencia entre la orden print o println es que ala hora de imprimir un resultado noslo imprime en una linea nueva
+
 ## 3. Funciones
 
 Las funciones en Kotlin se definen usando la palabra clave `fun`. A continuación, se muestra la estructura básica de una función:
