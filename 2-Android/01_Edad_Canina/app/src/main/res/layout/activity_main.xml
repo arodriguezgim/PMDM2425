@@ -28,9 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20sp"
         android:gravity="center"
+        android:maxLines="1"
         android:hint="Introduce tu edad" />
 
     <Button
+        android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20sp"
@@ -39,12 +41,13 @@
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/tvRespuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="Si fueras perro tú tendrías 47 años."
+        tools:text="Si fueras perro tú tendrías 47 años."
         android:textSize="20sp" />
 
 
