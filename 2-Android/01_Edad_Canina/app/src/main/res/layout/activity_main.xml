@@ -29,6 +29,7 @@
         android:layout_marginHorizontal="20sp"
         android:gravity="center"
         android:maxLines="1"
+        android:inputType="number"
         android:hint="Introduce tu edad" />
 
     <Button

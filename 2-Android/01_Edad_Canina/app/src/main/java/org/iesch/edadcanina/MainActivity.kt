@@ -1,9 +1,11 @@
 package org.iesch.edadcanina
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +25,36 @@ class MainActivity : AppCompatActivity() {
         val resultText = findViewById<TextView>(R.id.tvRespuesta)
         val calculateButton = findViewById<Button>(R.id.btnCalcular)
         val ageEdit = findViewById<EditText>(R.id.etEdad)
+
+        // LOGS EN ANDROID
+//        Log.i("DAM2","Esto es un Los de tipo INFO")
+//        Log.v("DAM2","Esto es un Los de tipo VERBOSE")
+//        Log.d("DAM2","Esto es un Los de tipo DEBUG")
+//        Log.w("DAM2","Esto es un Los de tipo WARNING")
+//        Log.e("DAM2","Esto es un Los de tipo ERROR")
+
+
+        // 2 - Los botones tienen la propiedad onClickListener al pulsarlos
+        calculateButton.setOnClickListener {
+
+            val ageString = ageEdit.text.toString()
+
+            if (ageString.isEmpty()){
+                // No hacemos nada
+                //Log.i("EdadCanina", "No has introducido ningun numero")
+                Toast.makeText(this, "Debes introducir un valor numérico", Toast.LENGTH_LONG).show()
+            } else {
+                val ageInt = ageString.toInt()
+                val dogAge = ageInt * 7
+                resultText.text = "Si fueras perro, tu edad sería de $dogAge años."
+            }
+
+
+
+
+
+
+        }
 
         
     }
