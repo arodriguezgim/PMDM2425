@@ -26,6 +26,17 @@ android {
             )
         }
     }
+
+    // Le vamos a activar DataBinding a la aplicacion
+    // Forma 1
+//    dataBinding {
+//        enable = true
+//    }
+    // Forma 2
+    buildFeatures {
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
