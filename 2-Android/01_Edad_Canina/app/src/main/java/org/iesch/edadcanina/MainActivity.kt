@@ -42,11 +42,13 @@ class MainActivity : AppCompatActivity() {
             if (ageString.isEmpty()){
                 // No hacemos nada
                 //Log.i("EdadCanina", "No has introducido ningun numero")
-                Toast.makeText(this, "Debes introducir un valor numérico", Toast.LENGTH_LONG).show()
+                // makeText no necesita llamar a getString (lo hace automaticamente)
+                Toast.makeText(this, getString(R.string.debes_numero), Toast.LENGTH_LONG).show()
             } else {
                 val ageInt = ageString.toInt()
                 val dogAge = ageInt * 7
-                resultText.text = "Si fueras perro, tu edad sería de $dogAge años."
+                //resultText.text = "Si fueras perro, tu edad sería de $dogAge años."
+                resultText.text = getString(R.string.resultado, dogAge)
             }
 
 
