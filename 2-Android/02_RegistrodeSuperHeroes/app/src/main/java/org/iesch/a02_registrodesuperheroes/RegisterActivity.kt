@@ -8,6 +8,15 @@ import androidx.core.view.WindowInsetsCompat
 import org.iesch.a02_registrodesuperheroes.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
+
+    companion object {
+        const val HERO_NAME_KEY = "hero"
+        const val ALTER_EGO_KEY = "alter_ego"
+        const val BIO_KEY = "bio"
+        const val POWER_KEY = "power"
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,10 +34,10 @@ class RegisterActivity : AppCompatActivity() {
         val bundle:Bundle = intent.extras!!
         // 11 - Recoger cada uno de los valores del bundle
         // Estos valores pueden ser nulos. Lo solucionamos mediante el operador Elvis ?:
-        val superHeroName = bundle.getString("heroName") ?: "Sin Nombre"
-        val alterEgo = bundle.getString("alter_ego") ?:  ""
-        val bio = bundle.getString("bio") ?: ""
-        val power = bundle.getFloat("power") ?: 0.0
+        val superHeroName = bundle.getString(HERO_NAME_KEY) ?: "Sin Nombre"
+        val alterEgo = bundle.getString(ALTER_EGO_KEY) ?:  ""
+        val bio = bundle.getString(BIO_KEY) ?: ""
+        val power = bundle.getFloat(POWER_KEY) ?: 0.0
 
         // 12 - Los mostramos en pantalla
         binding.heroName.text = superHeroName.toString()
