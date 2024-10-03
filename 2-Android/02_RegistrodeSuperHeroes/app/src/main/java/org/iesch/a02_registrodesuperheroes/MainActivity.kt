@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.ViewCompat
@@ -19,6 +20,15 @@ class MainActivity : AppCompatActivity() {
     private val CAMERA_KEY = 1000
     // lateinit es para prometerle a kotlin que cuando esa variable sea utilizada ya va a estar inicializada
     private lateinit var heroImage: ImageView
+    // 1 - Creamos una variable que va a manejar el resultado de haber hecho la foto
+    private var heroBitmap: Bitmap? = null
+    private val getContent = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+        // esto nos va a devolver un bitmap
+        bitmap ->
+        heroBitmap = bitmap
+        heroImage.setImageBitmap(heroBitmap)
+    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // 1 - Añadimos la funcionalidad de hacer click
+
         heroImage = binding.superheroImage
         heroImage.setOnClickListener {
             openCamera()
@@ -53,9 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openCamera() {
-        // 2 - ImplicitIntent: Android decide qué aplicaciones abre ese Intent
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, CAMERA_KEY)
+
+       getContent.launch(null)
     }
 
     private fun openDetailActivity(heroe:Hero) {
@@ -69,16 +78,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-
-        if ( resultCode == Activity.RESULT_OK && requestCode == CAMERA_KEY){
-            val extras = data?.extras
-            val heroBitmap = extras?.getParcelable<Bitmap>("data")
-            heroImage.setImageBitmap(heroBitmap)
-        }
-    }
 }
 
 
