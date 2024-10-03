@@ -3,8 +3,11 @@ package org.iesch.a02_registrodesuperheroes
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.media.Image
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
@@ -15,18 +18,26 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.iesch.a02_registrodesuperheroes.databinding.ActivityMainBinding
 import org.iesch.a02_registrodesuperheroes.model.Hero
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
     private val CAMERA_KEY = 1000
-    // lateinit es para prometerle a kotlin que cuando esa variable sea utilizada ya va a estar inicializada
+
     private lateinit var heroImage: ImageView
-    // 1 - Creamos una variable que va a manejar el resultado de haber hecho la foto
+
     private var heroBitmap: Bitmap? = null
-    private val getContent = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
-        // esto nos va a devolver un bitmap
-        bitmap ->
-        heroBitmap = bitmap
-        heroImage.setImageBitmap(heroBitmap)
+    // 1 - Si queremos guardar la imagen en memoria o que se vea mejor:
+    private var pictureFullPath = ""
+
+    private val getContent = registerForActivityResult(ActivityResultContracts.TakePicture()){
+
+        // Ahora nos devuelve un booleano. Si la toma de foto fue exitosa devolveremos un success
+        success ->
+        if (success && pictureFullPath.isNotEmpty()){
+            heroBitmap = BitmapFactory.decodeFile(pictureFullPath)
+            //dibujamos la imagen en miniatura
+            heroImage.setImageBitmap(heroBitmap!!)
+        }
     }
 
 
@@ -64,7 +75,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun openCamera() {
 
-       getContent.launch(null)
+       // 3 - Creamos un File y de ese file recuperamos el uri. Creamos la funcion.
+        val imageFile = createImageFile()// 5 - Dependiendo de la version que tengamos de Android se obtiene el Uri de una manera o de otra
+        val uri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            //En las nuevas versiones...
+
+            // LO DEJAMOS AQUI POR FIN DE TIEMPO
+        } else {
+
+        }
+    }
+
+    //4
+    private fun createImageFile(): File {
+        val fileName = "superhero_image"
+        //Directorio donde vamos a guardar la imagen. Directory Pictures se utiliza por defecto
+        val fileDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        //Creamos nuestro file, nos pide el nombre, el formato y el directorio
+        val file = File.createTempFile(fileName,".jpg", fileDirectory)
+        //El path absoluto se va a guardar en filepath
+        pictureFullPath = file.absolutePath
+        return file
     }
 
     private fun openDetailActivity(heroe:Hero) {
