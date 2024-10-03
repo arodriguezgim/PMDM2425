@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.iesch.a02_registrodesuperheroes.databinding.ActivityMainBinding
+import org.iesch.a02_registrodesuperheroes.model.Hero
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,20 +28,26 @@ class MainActivity : AppCompatActivity() {
             val alterEgo = binding.etAlterego.text.toString()
             val bio = binding.bioEdit.text.toString()
             val power = binding.powerBar.rating
-            openDetailActivity(superHeroName, alterEgo, bio, power)
+
+            // 16 creamos un nuevo Heroe
+            val heroe = Hero(superHeroName, alterEgo, bio, power)
+            openDetailActivity(heroe)
         }
     }
     //3 - Creamos la funcion que genera un Intent y nos lleva a detalle
     // 7
-    private fun openDetailActivity(superheroName: String, alterEgo: String, bio: String, power: Float) {
+    // 17
+    private fun openDetailActivity(heroe:Hero) {
         // 4 - Vamos a abrir DetailActivity. El Intent debe tener muy claro desde dónde se le llama y a dónde va
         val intent = Intent(this, RegisterActivity::class.java)
 
         // 8 Añado los valores al Intent con la funcion putExtra
-        intent.putExtra(RegisterActivity.HERO_NAME_KEY, superheroName)
-        intent.putExtra(RegisterActivity.ALTER_EGO_KEY, alterEgo)
-        intent.putExtra(RegisterActivity.BIO_KEY, bio)
-        intent.putExtra(RegisterActivity.POWER_KEY, power)
+//        intent.putExtra(RegisterActivity.HERO_NAME_KEY, superheroName)
+//        intent.putExtra(RegisterActivity.ALTER_EGO_KEY, alterEgo)
+//        intent.putExtra(RegisterActivity.BIO_KEY, bio)
+//        intent.putExtra(RegisterActivity.POWER_KEY, power)
+        //  18 Le pasamos al intent solo el Hero
+        intent.putExtra(RegisterActivity.HERO_KEY, heroe)
         // 5 Para utilizar el intent tenemos que llamar a startActivity
         startActivity(intent)
     }

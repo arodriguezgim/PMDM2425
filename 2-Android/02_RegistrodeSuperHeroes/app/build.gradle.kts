@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    // Añadimosla propiedad parcelable
+    id("kotlin-parcelize")
 }
 
 android {
