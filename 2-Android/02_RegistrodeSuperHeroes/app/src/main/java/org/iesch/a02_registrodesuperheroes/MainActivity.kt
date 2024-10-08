@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.Image
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -13,6 +14,7 @@ import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -79,11 +81,17 @@ class MainActivity : AppCompatActivity() {
         val imageFile = createImageFile()// 5 - Dependiendo de la version que tengamos de Android se obtiene el Uri de una manera o de otra
         val uri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
             //En las nuevas versiones...
+            FileProvider.getUriForFile(
+                this,
+                "$packageName.provider",
+                imageFile
+            )
 
-            // LO DEJAMOS AQUI POR FIN DE TIEMPO
         } else {
-
+            Uri.fromFile(imageFile)
         }
+
+        getContent.launch(uri)
     }
 
     //4
@@ -103,7 +111,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, RegisterActivity::class.java)
 
         intent.putExtra(RegisterActivity.HERO_KEY, heroe)
-        intent.putExtra(RegisterActivity.FOTO_KEY, heroImage.drawable.toBitmap())
+        intent.putExtra(RegisterActivity.FOTO_KEY, pictureFullPath)
 
         startActivity(intent)
     }

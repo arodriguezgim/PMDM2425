@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Las imagenes que exportemos con nuestro provider las puede ir a buscar al directorio Pictures-->
+<paths>
+    <external-files-path
+        name="superhero_images"
+        path="."/>
+</paths>
