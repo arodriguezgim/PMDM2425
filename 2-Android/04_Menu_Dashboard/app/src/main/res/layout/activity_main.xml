@@ -63,7 +63,7 @@
             android:background="@drawable/btn_background_1">
 
             <ImageView
-                android:id="@+id/imDesarrollo"
+                android:id="@+id/imDiseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +74,7 @@
                 app:srcCompat="@drawable/btn_1" />
 
             <TextView
-                android:id="@+id/tv_desarrollo"
+                android:id="@+id/tv_diseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -82,12 +82,12 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/imDesarrollo"
-                app:layout_constraintStart_toStartOf="@+id/imDesarrollo"
-                app:layout_constraintTop_toBottomOf="@+id/imDesarrollo" />
+                app:layout_constraintEnd_toEndOf="@+id/imDiseno"
+                app:layout_constraintStart_toStartOf="@+id/imDiseno"
+                app:layout_constraintTop_toBottomOf="@+id/imDiseno" />
 
             <ImageView
-                android:id="@+id/im_light_1"
+                android:id="@+id/im_light_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -100,10 +100,10 @@
             android:layout_height="170dp"
             android:layout_marginStart="12dp"
             android:layout_weight="0.5"
-            android:background="@drawable/btn_background_1">
+            android:background="@drawable/btn_background_2">
 
             <ImageView
-                android:id="@+id/imDesarrollo"
+                android:id="@+id/imDiseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -111,28 +111,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.3"
-                app:srcCompat="@drawable/btn_1" />
+                app:srcCompat="@drawable/btn_2" />
 
             <TextView
-                android:id="@+id/tv_desarrollo"
+                android:id="@+id/tv_diseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Desarrollo"
+                android:text="Diseños"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/imDesarrollo"
-                app:layout_constraintStart_toStartOf="@+id/imDesarrollo"
-                app:layout_constraintTop_toBottomOf="@+id/imDesarrollo" />
+                app:layout_constraintEnd_toEndOf="@+id/imDiseno"
+                app:layout_constraintStart_toStartOf="@+id/imDiseno"
+                app:layout_constraintTop_toBottomOf="@+id/imDiseno" />
 
             <ImageView
-                android:id="@+id/im_light_1"
+                android:id="@+id/im_light_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/light_1" />
+                app:srcCompat="@drawable/light_2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
@@ -151,7 +151,7 @@
             android:background="@drawable/btn_background_1">
 
             <ImageView
-                android:id="@+id/imDesarrollo"
+                android:id="@+id/imDiseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -162,7 +162,7 @@
                 app:srcCompat="@drawable/btn_1" />
 
             <TextView
-                android:id="@+id/tv_desarrollo"
+                android:id="@+id/tv_diseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -170,12 +170,12 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/imDesarrollo"
-                app:layout_constraintStart_toStartOf="@+id/imDesarrollo"
-                app:layout_constraintTop_toBottomOf="@+id/imDesarrollo" />
+                app:layout_constraintEnd_toEndOf="@+id/imDiseno"
+                app:layout_constraintStart_toStartOf="@+id/imDiseno"
+                app:layout_constraintTop_toBottomOf="@+id/imDiseno" />
 
             <ImageView
-                android:id="@+id/im_light_1"
+                android:id="@+id/im_light_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -191,7 +191,7 @@
             android:background="@drawable/btn_background_1">
 
             <ImageView
-                android:id="@+id/imDesarrollo"
+                android:id="@+id/imDiseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -202,7 +202,7 @@
                 app:srcCompat="@drawable/btn_1" />
 
             <TextView
-                android:id="@+id/tv_desarrollo"
+                android:id="@+id/tv_diseno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -210,12 +210,12 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/imDesarrollo"
-                app:layout_constraintStart_toStartOf="@+id/imDesarrollo"
-                app:layout_constraintTop_toBottomOf="@+id/imDesarrollo" />
+                app:layout_constraintEnd_toEndOf="@+id/imDiseno"
+                app:layout_constraintStart_toStartOf="@+id/imDiseno"
+                app:layout_constraintTop_toBottomOf="@+id/imDiseno" />
 
             <ImageView
-                android:id="@+id/im_light_1"
+                android:id="@+id/im_light_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
