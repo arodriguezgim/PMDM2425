@@ -32,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         val customAdapter = ProductoAdapter(this, listaProductos)
 
         binding.listaproductos.adapter = customAdapter
+
+        // Tarea a Domicilio
+        binding.listaproductos.setOnItemClickListener { adapterView, view, position, id ->
+
+            // Crear el Intent, pasarle mediante putExtra el Producto, y startActivity...
+        }
     }
 }
 
