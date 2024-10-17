@@ -39,5 +39,5 @@ class AlbumProvider {
             Album("Superbia", "Sôber", 2011, "https://i.scdn.co/image/ab67616d0000b27310c970d920a04542b5d4099b")
         )
     }
-    
+
 }
