@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </androidx.cardview.widget.CardView>
+
     <ImageView
         android:id="@+id/imgAlbum"
         android:layout_width="150dp"
@@ -19,9 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:textColor="@color/material_dynamic_neutral10"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgAlbum"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Agila" />
 
     <TextView
         android:id="@+id/tvAnio"
@@ -29,6 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="@color/material_dynamic_primary80"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/tvTitulo"
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
@@ -37,7 +49,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:textColor="@color/design_default_color_secondary"
+        android:textSize="20sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="@+id/tvAnio"
         app:layout_constraintTop_toBottomOf="@+id/tvAnio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
