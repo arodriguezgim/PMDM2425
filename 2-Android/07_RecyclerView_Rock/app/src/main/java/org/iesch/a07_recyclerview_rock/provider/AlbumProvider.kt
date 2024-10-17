@@ -6,12 +6,12 @@ class AlbumProvider {
     // 2 - Voy a proporcionar todos los datos mediante un companion objet
     companion object{
         val listaDeAlbums = listOf<Album>(
-            Album("Agila", "Extremoduro", 1996, "https://i.scdn.co/image/ab67616d0000b2735a8ba2534695700ef74e797f"),
-            Album("La Ley Innata", "Extremoduro", 2008, "https://i.scdn.co/image/ab67616d0000b273fd0dd20940a1c57b2e8b6f85"),
-            Album("Lo que aletea en nuestras cabezas", "Robe", 2015, "https://i.scdn.co/image/ab67616d0000b27365bcb9ba49418e6d7cd7f2d0"),
-            Album("Destrozares, canciones para el final de los tiempos", "Robe", 2016, "https://i.scdn.co/image/ab67616d0000b27302ba013b92307ecf1bdf5f04"),
-            Album("Mayéutica", "Robe", 2021, "https://i.scdn.co/image/ab67616d0000b273f621e6d2f7f54e2c875d291f"),
-            Album("Deltoya", "Extremoduro", 1992, "https://i.scdn.co/image/ab67616d0000b273ea3c71e24656b5bff4626b88"),
+            Album("Agila", "Extremoduro", 1996, "https://img.merchbar.com/product/crop/1616/2229998/K9JQ9J-1633889528-500x500-1633889523-Agila-English-2010-500x500.jpg?q=40&w=1400"),
+            Album("La Ley Innata", "Extremoduro", 2008, "https://i.scdn.co/image/ab67616d0000b273c8d5b20f7ca690ecc816271e"),
+            Album("Lo que aletea en nuestras cabezas", "Robe", 2015, "https://i.scdn.co/image/ab67616d0000b2735f4da5ccdb529d9120c73631"),
+            Album("Destrozares, canciones para el final de los tiempos", "Robe", 2016, "https://m.media-amazon.com/images/I/6126fnNRk7L._UF894,1000_QL80_.jpg"),
+            Album("Mayéutica", "Robe", 2021, "https://www.mondosonoro.com/wp-content/uploads/2021/05/ROBE-Mayeutica.jpg"),
+            Album("Deltoya", "Extremoduro", 1992, "https://m.media-amazon.com/images/I/71wOHE1iE1L._UF894,1000_QL80_.jpg"),
             Album("Yo, Minoría Absoluta", "Extremoduro", 2002, "https://i.scdn.co/image/ab67616d0000b27337d01cb917e1cfc0e67d80fb"),
             Album("Material Defectuoso", "Extremoduro", 2011, "https://i.scdn.co/image/ab67616d0000b2738dbd98a25b08d0dfcd2dd372"),
             Album("Pedrá", "Extremoduro", 1995, "https://i.scdn.co/image/ab67616d0000b2732f90a5b1f4a73f7ae6e8ba3c"),
@@ -25,7 +25,7 @@ class AlbumProvider {
             Album("28.000 Puñaladas", "Marea", 2004, "https://i.scdn.co/image/ab67616d0000b27301239849ba3c9e21cf1746e6"),
             Album("La Patera", "Marea", 2000, "https://i.scdn.co/image/ab67616d0000b2736a65fc4de02eaf843f5fb63b"),
             Album("Pongamos que hablo de Madrid", "Rosendo", 1999, "https://i.scdn.co/image/ab67616d0000b273626444cc4f36fc9d7cb3e285"),
-            Album("Loco por incordiar", "Rosendo", 1985, "https://i.scdn.co/image/ab67616d0000b273b91b5866bdb5273cf87a4d1f"),
+            Album("Loco por incordiar", "Rosendo", 1985, "https://i.scdn.co/image/ab67616d00001e026f3f0f3f34e3af29bf5c3d56"),
             Album("Agradecidos... Rosendo", "Rosendo", 2001, "https://i.scdn.co/image/ab67616d0000b273b18be2715d10434f9c69baed"),
             Album("Pájaros de barro", "Manolo García", 2001, "https://i.scdn.co/image/ab67616d0000b273ea0016df518e5b20ec6b6251"),
             Album("Arena en los bolsillos", "Manolo García", 1998, "https://i.scdn.co/image/ab67616d0000b27380d5d8ac3440f9a2848fcd43"),
