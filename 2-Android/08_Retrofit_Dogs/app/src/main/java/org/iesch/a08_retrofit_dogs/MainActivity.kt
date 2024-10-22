@@ -5,10 +5,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.iesch.a08_retrofit_dogs.adapter.DogAdapter
 import org.iesch.a08_retrofit_dogs.api.APIService
 import org.iesch.a08_retrofit_dogs.databinding.ActivityMainBinding
 import retrofit2.Retrofit
@@ -17,6 +19,9 @@ import retrofit2.create
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var adapter: DogAdapter
+    private val dogImages = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +35,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+
+            adapter = DogAdapter(dogImages)
+            binding.rvDogs.layoutManager = LinearLayoutManager(this)
+            //vamos a tener que pasarle un adapter
+        binding.rvDogs.adapter = adapter
     }
 
     // 3 Creamos la instancia de nuestro Objeto Retrofit
