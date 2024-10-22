@@ -33,9 +33,20 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    // Retrofit
+    implementation(libs.retrofit2.retrofit)
+    // Gson
+    implementation(libs.gson)
+    // Picasso
+    implementation(libs.picasso)
+    // Corrutinas
+    implementation(libs.kotlinx.coroutines.android)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
