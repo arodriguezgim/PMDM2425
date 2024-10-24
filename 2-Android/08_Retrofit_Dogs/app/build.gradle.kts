@@ -40,9 +40,9 @@ android {
 
 dependencies {
     // Retrofit
-    implementation(libs.retrofit2.retrofit)
+    implementation(libs.retrofit.v2110)
     // Gson
-    implementation(libs.gson)
+    implementation(libs.converter.gson)
     // Picasso
     implementation(libs.picasso)
     // Corrutinas

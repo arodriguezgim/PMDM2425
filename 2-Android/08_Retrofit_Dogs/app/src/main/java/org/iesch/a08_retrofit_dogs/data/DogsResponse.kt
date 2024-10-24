@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 // 1
 data class DogsResponse(
     @SerializedName("status") var status: String,
-    @SerializedName("message") var images: List<String>
+    @SerializedName("message") var imagesList: List<String>
 )
