@@ -1,4 +1,9 @@
 # Registro de Superhéroes
+
+### Aspecto Final de la App
+
+<img src="../../img/02registro.png.png" alt="App Edad Canina" width="300" />
+
 Esta es la segunda aplicación que vamos a desarrollar en clase
 
 Con este ejercicio aprenderás los siguientes temas sobre Android:

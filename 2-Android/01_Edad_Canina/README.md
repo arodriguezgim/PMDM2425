@@ -2,7 +2,7 @@
 
 ### Aspecto Final de la App
 
-<img src="../../img/01canino.png" alt="App Edad Canina" width="400" />
+<img src="../../img/01canino.png" alt="App Edad Canina" width="300" />
 
 ### Con este ejercicio aprenderás los siguientes temas sobre Android:
 - Android Views.
