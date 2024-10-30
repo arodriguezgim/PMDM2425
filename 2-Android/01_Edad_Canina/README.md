@@ -1,6 +1,8 @@
 # Mi edad canina
 
-Con este ejercicio aprenderás los siguientes temas sobre Android:
+### Aspecto Final de la App
+ [App Edad Canina](../../img/01canino.png)
+### Con este ejercicio aprenderás los siguientes temas sobre Android:
 - Android Views.
 - ImageViews - Incluye imágenes en tus apps.
 - Implementar views con findViewById en Kotlin.
