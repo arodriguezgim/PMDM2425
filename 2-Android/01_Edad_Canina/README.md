@@ -1,7 +1,9 @@
 # Mi edad canina
 
 ### Aspecto Final de la App
-![App Edad Canina](../../img/01canino.png)
+
+<img src="../../img/01canino.png" alt="App Edad Canina" width="400" />
+
 ### Con este ejercicio aprenderás los siguientes temas sobre Android:
 - Android Views.
 - ImageViews - Incluye imágenes en tus apps.
