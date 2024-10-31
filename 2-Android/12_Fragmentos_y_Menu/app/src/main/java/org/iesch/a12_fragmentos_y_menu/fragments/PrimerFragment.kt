@@ -1,33 +1,34 @@
 package org.iesch.a12_fragmentos_y_menu.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.iesch.a12_fragmentos_y_menu.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+const val NOMBRE_BUNDLE = "nombre"
+const val DIRECCION_BUNDLE = "direccion"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PrimerFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class PrimerFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    private var nombre: String? = null
+    private var direccion: String? = null
+
+    // Este método se llama cuando la vista se haya cargado
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Oye! hay argumentos? (Con educacion). Si hay alguno... me lo puedes dar?
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            nombre = it.getString(NOMBRE_BUNDLE)
+            direccion = it.getString(DIRECCION_BUNDLE)
+
+            Log.i("DAM2", nombre.orEmpty() )
         }
+
     }
 
     override fun onCreateView(
@@ -38,22 +39,18 @@ class PrimerFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_primer, container, false)
     }
 
+    // Los fragmentos se suelen instanciar con un método llamado newInstance
+    // Este método, lo único que hace, es devolver el Fragment
+    // Desde donde quiera que llame a este Fragment, le voy a pasar los parámetros que sea
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PrimerFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(nombre: String, direccion: String) =
             PrimerFragment().apply {
+                // Le estoy diciendo que coja al atrbuto arguments y le voy a pasar un Bundle
+                // Un Bundle es donde va a guardar toda la info que le vamos a pasar al Fragment
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(NOMBRE_BUNDLE, nombre)
+                    putString(DIRECCION_BUNDLE, direccion)
                 }
             }
     }
