@@ -3,7 +3,7 @@
 
     <style name="Theme.App.Starting" parent="Base.Theme._11_Splash_Cine_Halloween">
         <item name="android:windowSplashScreenBackground">@color/halloween</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/halloweenicon</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/calabazon</item>
         <item name="android:windowSplashScreenAnimationDuration">1000</item>
 
     </style>

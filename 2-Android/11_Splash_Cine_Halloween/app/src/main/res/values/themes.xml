@@ -7,7 +7,7 @@
 
     <style name="Theme._11_Splash_Cine_Halloween" parent="Base.Theme._11_Splash_Cine_Halloween" />
     <style name="Theme.App.Starting" parent="Base.Theme._11_Splash_Cine_Halloween">
-        <item name="android:windowSplashScreenBackground">@color/halloween</item>
+        <item name="windowSplashScreenBackground">@color/halloween</item>
 
     </style>
 </resources>
