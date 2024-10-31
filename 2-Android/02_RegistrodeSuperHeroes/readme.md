@@ -2,7 +2,7 @@
 
 ### Aspecto Final de la App
 
-<div style=" text-align: center;"><img src="../../img/02registro.png" alt="App Edad Canina" width="300" /></div>
+<img src="../../img/02registro.png" alt="App Edad Canina" width="300" />
 
 Esta es la segunda aplicación que vamos a desarrollar en clase
 
