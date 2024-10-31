@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BDA0F4"
+    android:background="#FAC834"
     tools:context=".fragments.PrimerFragment">
 
 
     <Button
-        android:id="@+id/btnPrimerfragment"
+        android:id="@+id/btnTercerfragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PRIMER FRAGMENT"
+        android:text="TERCER FRAGMENT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
