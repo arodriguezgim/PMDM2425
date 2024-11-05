@@ -17,12 +17,26 @@
     - [App 09 - Corrutinas en Kotlin](./2-Android/09_Corrutinas_Kotlin/)
     - [App 10 - Splash Screen 1](./2-Android/10_Splash_No_Google/)
     - [App 11 - Halloween Cine](./2-Android/11_Splash_Cine_Halloween/)
-- UD4 - Introducción a Dart
-- UD5 - Desarrollo de Apps Multiplataforma: Flutter
+    - [App 12 - Fragmentos](./2-Android/12_Fragmentos_y_Menu/readme.md)
+- UD4 - Arquitectura MVVM en Android
+    - [App 13 - Citas ModelView](./2-Android/13_ViewModel/readme.md)
+- UD5 - Persistencia de Datos en Android
+- UD6 - Introducción a Dart
+- UD7 - Desarrollo de Apps Multiplataforma: Flutter
+
+### Prácticas 1ª Evaluación
+
+- [Práctica 1](./0-Practicas/Practica01.pdf)
+- [Práctica 2](./0-Practicas/Practica02.pdf)
+- [Práctica 3](./0-Practicas/Practica03.pdf)
+- [Práctica 4](./0-Practicas/Practica04.pdf)
+- [Práctica 5](./0-Practicas/Practica05.pdf)
+- [Práctica 6](./0-Practicas/Practica06.pdf)
+- [Práctica 7](./0-Practicas/Practica07.pdf)
 
 ## Evaluación 2
 
-- UD6 - Desarrollo de IUs con Flutter
-- UD7 - Desarrollo avanzado con Flutter
-- UD8 - Introducción a Videojuegos 2D con Unity
-- UD9 - Introducción a Videojuegos 3D con Unity
+- UD8 - Desarrollo de IUs con Flutter
+- UD9 - Desarrollo avanzado con Flutter
+- UD10 - Introducción a Videojuegos 2D con Unity
+- UD11 - Introducción a Videojuegos 3D con Unity
