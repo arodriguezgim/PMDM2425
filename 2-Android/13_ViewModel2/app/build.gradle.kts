@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "org.iesch.a13_viewmodel"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "org.iesch.a13_viewmodel"
@@ -33,10 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
