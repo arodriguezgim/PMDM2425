@@ -1,3 +1,9 @@
+# App Citas ViewModel
+
+### Aspecto Final de la App
+
+<img src="../../img/13_Citas.webm" alt="App Edad Canina" width="300" />
+
 # Guía de ViewModel y LiveData en Android
 
 ## ¿Qué es el ViewModel?
