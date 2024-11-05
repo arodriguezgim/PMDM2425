@@ -1,11 +1,3 @@
-# App Citas ViewModel
-
-### Aspecto Final de la App
-
-<img src="../../img/13_Citas.webm" alt="App Edad Canina" width="300" />
-
-# Guía de ViewModel y LiveData en Android
-
 ## ¿Qué es el ViewModel?
 
 `ViewModel` es una clase proporcionada por Android que ayuda a gestionar y almacenar datos relacionados con la interfaz de usuario de forma que sobrevivan a cambios de configuración, como rotaciones de pantalla. Forma parte de la **Android Architecture Components** y su objetivo es separar la lógica de la UI del código de la actividad o fragmento, promoviendo el patrón **MVVM** (Model-View-ViewModel).
