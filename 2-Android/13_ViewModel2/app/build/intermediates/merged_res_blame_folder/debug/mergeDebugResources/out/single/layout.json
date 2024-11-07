@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "org.iesch.a13_viewmodel.app-mergeDebugResources-34:/layout/activity_main.xml",
+        "source": "org.iesch.a13_viewmodel.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Alberto\\.gradle\\daemon\\8.7\\org.iesch.a13_viewmodel.app-mergeDebugResources-34:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Alberto\\.gradle\\daemon\\8.7\\org.iesch.a13_viewmodel.app-main-37:\\layout\\activity_main.xml"
+    }
+]
