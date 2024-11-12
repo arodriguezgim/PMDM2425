@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "org.iesch.a15_google_maps"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "org.iesch.a15_google_maps"
