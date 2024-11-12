@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "org.iesch.a14_sharedpreferences"
-    compileSdk = 35
+    namespace = "org.iesch.a15_google_maps"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "org.iesch.a14_sharedpreferences"
+        applicationId = "org.iesch.a15_google_maps"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,12 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
+
+    //2 - Google Maps
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
