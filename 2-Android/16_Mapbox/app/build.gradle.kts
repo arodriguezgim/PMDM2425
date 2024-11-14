@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "org.iesch.a16_mapbox"
-    compileSdk = 34
+    namespace = "com.example.a15_mapbox"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "org.iesch.a16_mapbox"
+        applicationId = "com.example.a15_mapbox"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -36,6 +36,11 @@ android {
 }
 
 dependencies {
+
+    //MapBox
+    implementation("com.mapbox.maps:android:11.8.0")
+    // If you're using compose also add the compose extension
+    // implementation("com.mapbox.extension:maps-compose:11.8.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
