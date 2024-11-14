@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="polilyne_color">#FF9800</color>
+    <color name="polilyne_color_2">#8BC34A</color>
+    <color name="polilyne_color_3">#00BCD4</color>
+    <color name="polilyne_color_4">#FFEB3B</color>
 </resources>
