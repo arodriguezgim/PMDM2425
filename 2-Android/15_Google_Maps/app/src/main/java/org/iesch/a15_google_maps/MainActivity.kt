@@ -1,6 +1,7 @@
 package org.iesch.a15_google_maps
 
 import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -16,7 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
 
     // 1 - Nos creamos la variable que será nuestro mapa
     private lateinit var map : GoogleMap
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
         createMarker()
+        map.setOnMyLocationButtonClickListener(this)
+        map.setOnMyLocationClickListener(this)
         enableLocation()
     }
 
@@ -106,6 +109,15 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
+    }
+
+    override fun onMyLocationButtonClick(): Boolean {
+        Toast.makeText(this, "Botón Pulsado", Toast.LENGTH_SHORT).show()
+        return false
+    }
+
+    override fun onMyLocationClick(p0: Location) {
+        Toast.makeText(this, "Estás en ${p0.latitude}, ${p0.longitude}", Toast.LENGTH_SHORT).show()
     }
 }
 
