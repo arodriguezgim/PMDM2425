@@ -1,44 +1,21 @@
-package com.alberto.practica17
+package com.alberto.practica17.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.alberto.practica17.databinding.ActivityCrashBinding
+import com.alberto.practica17.R
 
-class CrashActivity : AppCompatActivity() {
-
-    private  lateinit var binding : ActivityCrashBinding
-
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityCrashBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_home)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // Boton Crash
-        binding.btnCrash.setOnClickListener {
-            // La app crasheará en Fiebase
-            throw RuntimeException("Error controlado para Firebase CrashLytics")
-        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

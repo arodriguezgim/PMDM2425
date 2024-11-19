@@ -2,11 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+
+    id("com.google.firebase.crashlytics")
+
 }
 
 android {
     namespace = "com.alberto.practica17"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.alberto.practica17"
@@ -46,6 +49,11 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     // Analytics
     implementation("com.google.firebase:firebase-analytics-ktx")
+    // CrashLytics
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
+    // Auth
+    implementation("com.google.firebase:firebase-auth-ktx")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
