@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "146838644981",
+    "project_id": "fir-dam-2f965",
+    "storage_bucket": "fir-dam-2f965.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146838644981:android:1f02d0bb7e4a12f9d0bdbc",
+        "android_client_info": {
+          "package_name": "com.alberto.practica17"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH41lB_kwIQo8dL2spMKsOrWfznwlArTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
