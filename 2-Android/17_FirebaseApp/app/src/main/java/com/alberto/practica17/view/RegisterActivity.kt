@@ -30,6 +30,12 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setup() {
+        // PULSAR EN IR A LOGIN
+        binding.btnIrALogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         // PULSAR EN EL BOTON REGISTRAR
         binding.btnCrearCuenta.setOnClickListener {
             // Comprobar que se haya introducido usuario y contraseña
