@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--Colores Firebase-->
+    <color name="amarillo_fb">#FFC400</color>
+    <color name="naranja_fb">#FF9100</color>
+    <color name="rojo_fb">#DD2C00</color>
+    <color name="gris_10_fb">#1F1F1F</color>
+    <color name="gris_20_fb">#303030</color>
+    <color name="gris_30_fb">#474747</color>
+    <color name="gris_40_fb">#E5E5E5</color>
+    <color name="azul_fb">#4285F4</color>
 </resources>

@@ -5,12 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gris_40_fb"
     tools:context=".view.LoginActivity">
 
     <LinearLayout
         android:id="@+id/authLayout"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="10dp"
             android:hint="Email"
             android:inputType="text" />
 
@@ -32,6 +34,7 @@
 
         <EditText
             android:id="@+id/passEditText"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -39,6 +42,7 @@
             android:inputType="textPassword" />
 
         <Space
+            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -52,18 +56,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Registrar" />
+                android:backgroundTint="@color/amarillo_fb"
+                android:text="Registro" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_marginHorizontal="10dp" />
 
             <Button
                 android:id="@+id/btn_Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/naranja_fb"
                 android:text="Login" />
         </LinearLayout>
     </LinearLayout>

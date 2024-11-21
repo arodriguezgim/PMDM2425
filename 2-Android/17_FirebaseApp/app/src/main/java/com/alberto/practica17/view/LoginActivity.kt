@@ -1,5 +1,6 @@
 package com.alberto.practica17.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,39 +30,55 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        // Funcion setupp para separar la lógica
+        // Funcion setup para separar la lógica
         setup()
     }
 
+
     private fun setup() {
-        // PULSAR EN EL BOTON REGISTRAR
+        // PULSAR EL BOTON IR A REGISTRO
         binding.btnRegister.setOnClickListener {
+            irARegistro()
+        }
+        // PULSAR EN EL BOTON LOGUEAR
+        binding.btnLogin.setOnClickListener {
             // Comprobar que se haya introducido usuario y contraseña
-            if ( binding.emailEditText.text.isNotEmpty() && binding.passEditText.text.isNotEmpty() ){
-                // Registramos el usuario
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(
-                    binding.emailEditText.text.toString(),
-                    binding.passEditText.text.toString()
-                )
-                    // Le añadimos un listener para comprobar si se ha registrado correctamente o no
-                    .addOnCompleteListener {
-                        respuesta ->
-                        if ( respuesta.isSuccessful ){
-                            // Esto es porque se ha añadido el usuario a nuestro Firebase
-                            Toast.makeText(this, "Usuario Registrado correctamente", Toast.LENGTH_SHORT).show()
+            if (binding.emailEditText.text.isNotEmpty() && binding.passEditText.text.isNotEmpty()) {
+
+                // Loguear al usuario
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    binding.emailEditText.text.toString(), binding.passEditText.text.toString()
+                ).addOnCompleteListener { respuesta ->
+                        if (respuesta.isSuccessful) {
+                            // Login Correcto
+                            irAHomeActivity(binding.emailEditText.text.toString(), ProviderType.EMAIL_PASSWORD)
                         } else {
                             showError()
                         }
                     }
+
+
             }
         }
+    }
+    private fun irAHomeActivity(email:String, provider: ProviderType ) {
+        val homeIntent = Intent(this, HomeActivity::class.java).apply {
+            putExtra("email", email)
+            putExtra("provider", provider.name)
+        }
+        startActivity(homeIntent)
+    }
+
+    private fun irARegistro() {
+        val registerIntent = Intent(this, RegisterActivity::class.java)
+        startActivity(registerIntent)
     }
 
     private fun showError() {
         val builder = AlertDialog.Builder(this)
-        builder
-            .setTitle("Error al registrar")
-        builder.setMessage("Se ha prroducido un error")
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error al loguear el usuario")
+        builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
