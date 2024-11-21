@@ -1,7 +1,9 @@
 package com.alberto.practica17.view
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -32,6 +34,23 @@ class LoginActivity : AppCompatActivity() {
 
         // Funcion setup para separar la lógica
         setup()
+        // Comprobamos si hay una sesion
+        session()
+    }
+
+    private fun session() {
+        val prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE)
+        val email = prefs.getString("email", null)
+        val provider = prefs.getString("provider", null)
+        if (email != null && provider != null ){
+            binding.authLayout.visibility = View.INVISIBLE
+            irAHomeActivity(email, ProviderType.valueOf(provider))
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        binding.authLayout.visibility = View.VISIBLE
     }
 
 

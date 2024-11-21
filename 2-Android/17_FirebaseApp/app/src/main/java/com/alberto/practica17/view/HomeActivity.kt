@@ -1,5 +1,6 @@
 package com.alberto.practica17.view
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,7 +34,10 @@ class HomeActivity : AppCompatActivity() {
         val bundle = intent.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
-        
+        // Guardado de datos
+        val prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE)
+        prefs.edit().putString("email", email).putString("provider", provider).apply()
+
         setup(email ?: "", provider ?: "")
     }
 
@@ -44,6 +48,10 @@ class HomeActivity : AppCompatActivity() {
 
         // Boton Cerrar Sesion
         binding.btnLogout.setOnClickListener {
+            // borrado de datos
+            val prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE)
+            prefs.edit().clear().apply()
+
             FirebaseAuth.getInstance().signOut()
             finish()
         }
