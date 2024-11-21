@@ -72,5 +72,13 @@
                 android:backgroundTint="@color/naranja_fb"
                 android:text="Login" />
         </LinearLayout>
+        <Button
+            android:id="@+id/btn_Google"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/azul_fb"
+            android:text="Login con Google" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,6 +53,7 @@ class HomeActivity : AppCompatActivity() {
             prefs.edit().clear().apply()
 
             FirebaseAuth.getInstance().signOut()
+            onBackPressed()
             finish()
         }
     }

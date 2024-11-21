@@ -12,9 +12,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.alberto.practica17.R
 import com.alberto.practica17.databinding.ActivityLoginBinding
+import com.google.android.gms.auth.api.identity.BeginSignInRequest
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginActivity : AppCompatActivity() {
+
+    private val GOOGLE_SIGN_IN = 100
 
     private lateinit var binding: ActivityLoginBinding
 
@@ -79,6 +86,20 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
+        // PULSAR EL BOTON LOGIN GOOGLE
+        binding.btnGoogle.setOnClickListener {
+            // Configuracion
+            val googleConf =GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.google_id))
+                .requestEmail()
+                .build()
+            // Iniciar la autentificacion
+            val googleSignInClient = GoogleSignIn.getClient(this, googleConf)
+
+            googleSignInClient.signOut()
+
+            startActivityForResult(googleSignInClient.signInIntent, GOOGLE_SIGN_IN)
+        }
     }
     private fun irAHomeActivity(email:String, provider: ProviderType ) {
         val homeIntent = Intent(this, HomeActivity::class.java).apply {
@@ -100,5 +121,29 @@ class LoginActivity : AppCompatActivity() {
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if ( requestCode == GOOGLE_SIGN_IN ){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+            val account = task.getResult(ApiException::class.java)
+            // Si to do ha ido bien tendremos la cuenta de google.
+            //Ahora nos autenticamos en Google
+            if ( account != null ){
+                val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                FirebaseAuth.getInstance().signInWithCredential(credential)
+                    .addOnCompleteListener {
+                        registro ->
+                        if (registro.isSuccessful) {
+                            irAHomeActivity(account.email ?: "", ProviderType.GOOGLE)
+                        } else {
+                            showError()
+                        }
+                    }
+            }
+        }
     }
 }

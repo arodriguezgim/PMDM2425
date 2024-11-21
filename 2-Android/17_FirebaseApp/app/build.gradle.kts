@@ -53,6 +53,9 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     // Auth
     implementation("com.google.firebase:firebase-auth-ktx")
+    // Google Auth
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
 
 
     implementation(libs.androidx.core.ktx)

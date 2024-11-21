@@ -12,7 +12,20 @@
           "package_name": "com.alberto.practica17"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "146838644981-6a8mt8tqc7tga40g578puif13sr1e55e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alberto.practica17",
+            "certificate_hash": "d319d15c3239a129d482b087c1016582076c5298"
+          }
+        },
+        {
+          "client_id": "146838644981-8pfg7hjm4s8vj9tldusneubotf663qn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDH41lB_kwIQo8dL2spMKsOrWfznwlArTg"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146838644981-8pfg7hjm4s8vj9tldusneubotf663qn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
