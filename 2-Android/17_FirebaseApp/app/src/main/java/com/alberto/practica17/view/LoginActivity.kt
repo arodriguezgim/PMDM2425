@@ -18,6 +18,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
+import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.remoteConfigSettings
 
 class LoginActivity : AppCompatActivity() {
 
@@ -38,11 +44,43 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        // Iniciamos Remote Config
+        val configSettings : FirebaseRemoteConfigSettings =  remoteConfigSettings {
+            // cada cuantos segundos quiero que se actualicen estos valores
+            minimumFetchIntervalInSeconds = 60
+        }
+        // Ya podemos acceder a remote Config
+        val firebaseConfig : FirebaseRemoteConfig = Firebase.remoteConfig
+        firebaseConfig.setConfigSettingsAsync(configSettings)
+        firebaseConfig.setDefaultsAsync(
+            mapOf(
+                "mostrar_boton" to false,
+            )
+        )
+        // Configuramos los mensajes Push
+        notification()
 
         // Funcion setup para separar la lógica
         setup()
         // Comprobamos si hay una sesion
         session()
+    }
+
+    private fun notification() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener {
+            it.result?.let { token ->
+                //Imprimimos el token
+                println("Este es el token del dispositivo: $token")
+            }
+        }
+        // Nos suscribimos a temas
+        FirebaseMessaging.getInstance().subscribeToTopic("DAM")
+
+        // Recuperamos unformacion de la notificacion
+        val url = intent.getStringExtra("url")
+        url?.let {
+            println("Ha llegado información en un Push: $it")
+        }
     }
 
     private fun session() {

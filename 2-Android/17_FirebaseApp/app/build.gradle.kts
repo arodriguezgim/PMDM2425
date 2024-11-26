@@ -55,7 +55,10 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     // Google Auth
     implementation("com.google.android.gms:play-services-auth:20.7.0")
-
+    // Cloud Messaging (Mensajes Push)
+    implementation("com.google.firebase:firebase-messaging-ktx")
+    // Remote Config
+    implementation("com.google.firebase:firebase-config-ktx")
 
 
     implementation(libs.androidx.core.ktx)

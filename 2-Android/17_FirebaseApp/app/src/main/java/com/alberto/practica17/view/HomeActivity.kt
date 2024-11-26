@@ -2,6 +2,7 @@ package com.alberto.practica17.view
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +10,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.alberto.practica17.R
 import com.alberto.practica17.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 
 
 enum class  ProviderType {
@@ -38,6 +42,15 @@ class HomeActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE)
         prefs.edit().putString("email", email).putString("provider", provider).apply()
 
+        // Recupero la informacin de RemoteConfig
+        binding.btnTodos.visibility = View.INVISIBLE
+        Firebase.remoteConfig.fetchAndActivate()
+            .addOnCompleteListener {
+                if (it.isSuccessful){
+                    val mostrarboton = Firebase.remoteConfig["mostrar_boton"].asBoolean()
+                }
+            }
+
         setup(email ?: "", provider ?: "")
     }
 
@@ -55,6 +68,15 @@ class HomeActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
             finish()
+        }
+
+        // Boton Crash
+        binding.btnCrash.setOnClickListener {
+
+            // Podemos enviar log de contexto
+            FirebaseCrashlytics.getInstance().log("Esta App pasa por aquí")
+            // La app crasheará en Firebase
+            throw RuntimeException("Error controlado para Firebase CrashLytics")
         }
     }
 }
