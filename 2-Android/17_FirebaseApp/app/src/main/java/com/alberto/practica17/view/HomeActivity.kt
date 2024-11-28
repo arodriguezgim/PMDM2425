@@ -12,6 +12,7 @@ import com.alberto.practica17.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.get
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 
 
@@ -45,9 +46,12 @@ class HomeActivity : AppCompatActivity() {
         // Recupero la informacin de RemoteConfig
         binding.btnTodos.visibility = View.INVISIBLE
         Firebase.remoteConfig.fetchAndActivate()
-            .addOnCompleteListener {
-                if (it.isSuccessful){
-                    val mostrarboton = Firebase.remoteConfig["mostrar_boton"].asBoolean()
+            .addOnCompleteListener { respuesta ->
+                if (respuesta.isSuccessful){
+                    val mostrarboton = Firebase.remoteConfig["show_todo_button"].asBoolean()
+                    val textoBoton = Firebase.remoteConfig["text_todo_button"].asString()
+                    binding.btnTodos.visibility = if ( mostrarboton ) View.VISIBLE else View.GONE
+                    binding.btnTodos.text = textoBoton
                 }
             }
 

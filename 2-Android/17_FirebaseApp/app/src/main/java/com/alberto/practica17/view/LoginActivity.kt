@@ -52,14 +52,15 @@ class LoginActivity : AppCompatActivity() {
         // Ya podemos acceder a remote Config
         val firebaseConfig : FirebaseRemoteConfig = Firebase.remoteConfig
         firebaseConfig.setConfigSettingsAsync(configSettings)
+        // La aplicacion puede no tener acceso a internet en ese instante
         firebaseConfig.setDefaultsAsync(
             mapOf(
-                "mostrar_boton" to false,
+                "show_todo_button" to false,
+                "text_todo_button" to "Un texto cualquiera"
             )
         )
         // Configuramos los mensajes Push
         notification()
-
         // Funcion setup para separar la lógica
         setup()
         // Comprobamos si hay una sesion
