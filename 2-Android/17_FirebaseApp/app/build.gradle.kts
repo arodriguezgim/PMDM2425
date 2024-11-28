@@ -59,6 +59,8 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging-ktx")
     // Remote Config
     implementation("com.google.firebase:firebase-config-ktx")
+    // Firebase Firestore
+    implementation("com.google.firebase:firebase-firestore-ktx")
 
 
     implementation(libs.androidx.core.ktx)
