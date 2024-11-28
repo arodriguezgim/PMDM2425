@@ -11,6 +11,7 @@ import com.alberto.practica17.R
 import com.alberto.practica17.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.get
 import com.google.firebase.remoteconfig.ktx.remoteConfig
@@ -24,6 +25,8 @@ enum class  ProviderType {
 class HomeActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityHomeBinding
+    // 1 Instancia de nuestra Base de Datos
+    private val db = FirebaseFirestore.getInstance()
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +59,32 @@ class HomeActivity : AppCompatActivity() {
             }
 
         setup(email ?: "", provider ?: "")
+        // Firebase Firestore
+        // 2 Tomamos el control de nuestro Botones
+        binding.btnGuardar.setOnClickListener {
+            // 2 Guardamos Datos
+            db.collection("usuarios").document(email!!).set(
+                hashMapOf(
+                    "provider" to provider,
+                    "direccion" to binding.addressTextView.text.toString(),
+                    "telefono" to binding.phoneTextView.text.toString(),
+                )
+            )
+        }
+        binding.btnRecuperar.setOnClickListener {
+            // Recuperamos la Info
+            db.collection("usuarios").document( email!! ).get().addOnCompleteListener {
+                // dibujamos los datos obtenidos
+                binding.addressTextView.setText(it.result.getString("direccion"))
+                binding.phoneTextView.setText(it.result.getString("telefono"))
+            }
+        }
+        binding.btnBorrar.setOnClickListener {
+            // Borrar los datos
+            db.collection("usuarios").document( email!! ).delete()
+        }
     }
+
 
     private fun setup(email: String, provider: String) {
         title = "Home"

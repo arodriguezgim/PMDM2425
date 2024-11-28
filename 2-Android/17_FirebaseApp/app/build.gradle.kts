@@ -61,6 +61,8 @@ dependencies {
     implementation("com.google.firebase:firebase-config-ktx")
     // Firebase Firestore
     implementation("com.google.firebase:firebase-firestore-ktx")
+    // RealTime Database
+    implementation("com.google.firebase:firebase-database-ktx")
 
 
     implementation(libs.androidx.core.ktx)
