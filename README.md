@@ -21,7 +21,7 @@
 - UD4 - Arquitectura MVVM en Android
     - [App 13 - Citas ModelView](./2-Android/13_ViewModel/readme.md)
 - UD5 - Persistencia de Datos en Android
-- UD6 - Introducción a Dart
+- [UD6 - Introducción a Dart](./3-Dart/readme.md)
 - UD7 - Desarrollo de Apps Multiplataforma: Flutter
 
 ### Prácticas 1ª Evaluación
