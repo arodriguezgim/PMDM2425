@@ -1,6 +1,7 @@
 package com.alberto.practica17.view
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -109,6 +110,11 @@ class HomeActivity : AppCompatActivity() {
             FirebaseCrashlytics.getInstance().log("Esta App pasa por aquí")
             // La app crasheará en Firebase
             throw RuntimeException("Error controlado para Firebase CrashLytics")
+        }
+
+        binding.btnTodos.setOnClickListener {
+            val intent = Intent(this, ListaTareasActivity::class.java)
+            startActivity(intent)
         }
     }
 }
